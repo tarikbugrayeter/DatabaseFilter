@@ -1,0 +1,157 @@
+﻿@model DatabaseApp.Models.Thesis
+@{
+    ViewData["Title"] = "Create";
+    Layout = "_Layout";
+}
+
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #e0d9c9; 
+        margin: 0;
+        padding: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    h1 {
+        text-align: center;
+        color: #402b23; 
+    }
+
+    form {
+        max-width: 800px;
+        width: 100%;
+        background: #f2e8da;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        margin: auto; 
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        font-size: 16px;
+        margin-bottom: 5px;
+        color: #402b23; 
+    }
+
+    input {
+        width: 100%;
+        padding: 8px;
+        box-sizing: border-box;
+        margin-bottom: 10px;
+        border: 1px solid #5f4339; 
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    .btn-primary {
+        background-color: #5f4339; 
+        color: #fff;
+        padding: 10px 15px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .btn-primary:hover {
+        background-color: #402b23; 
+    }
+</style>
+
+<h1>Create New Thesis</h1>
+
+<form asp-action="Create">
+    <div class="form-group">
+        <label asp-for="Title"></label>
+        <input asp-for="Title" class="form-control" />
+        <span asp-validation-for="Title" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Abstract"></label>
+        <input asp-for="Abstract" class="form-control" />
+        <span asp-validation-for="Abstract" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Year"></label>
+        <input asp-for="Year" class="form-control" />
+        <span asp-validation-for="Year" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Type"></label>
+        <input asp-for="Type" class="form-control" />
+        <span asp-validation-for="Type" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="NumOfPages"></label>
+        <input asp-for="NumOfPages" class="form-control" />
+        <span asp-validation-for="NumOfPages" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Language"></label>
+        <input asp-for="Language" class="form-control" />
+        <span asp-validation-for="Language" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="SubmissionDate"></label>
+        <input asp-for="SubmissionDate" type="date" class="form-control" />
+        <span asp-validation-for="SubmissionDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label for="keywordText">Keyword Name</label>
+        <input type="text" id="keywordText" name="keywordText" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="universityName">University Name</label>
+        <input type="text" id="universityName" name="universityName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="instituteName">Institute Name</label>
+        <input type="text" id="instituteName" name="instituteName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="topicName">Topic Name</label>
+        <input type="text" id="topicName" name="topicName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="SupervisorName">Supervisor Name</label>
+        <input type="text" id="SupervisorName" name="SupervisorName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="CoSupervisorName">Co-Supervisor Name</label>
+        <input type="text" id="CoSupervisorName" name="CoSupervisorName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label for="AuthorName">Author Name</label>
+        <input type="text" id="Authorname" name="AuthorName" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+
+
+
